@@ -21,12 +21,17 @@ services:
       - eureka-service
       - gateway-service
       - database
-    scale: 2
   database:
     image: postgres
     restart: always
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./database:/var/lib/postgresql
     environment:
       POSTGRES_PASSWORD: postgres
+    networks:
+      - tenant-infrastructure
 
 networks:
   tenant-infrastructure:

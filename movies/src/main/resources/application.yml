@@ -5,13 +5,13 @@ spring:
   application:
     name: movies
   datasource:
-    url: jdbc:postgresql://localhost:5432/tenantdb
+    url: jdbc:postgresql://localhost:5432/tenant_test
     username: postgres
     password: postgres
   jpa:
     properties:
       hibernate:
-        ddl-auto: update
+        ddl-auto: create
         jdbc:
           lob:
             non_contextual_creation: true

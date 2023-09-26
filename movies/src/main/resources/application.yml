@@ -1,0 +1,25 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: movies
+  datasource:
+    url: jdbc:postgresql://localhost:5432/tenantdb
+    username: postgres
+    password: postgres
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: update
+        jdbc:
+          lob:
+            non_contextual_creation: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka-service:8761/eureka
+    instance:
+      preferIpAddress: true
